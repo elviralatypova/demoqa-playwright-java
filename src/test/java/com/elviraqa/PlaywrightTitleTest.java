@@ -25,10 +25,10 @@ public class PlaywrightTitleTest {
     }
 
     @Test
-    public void testTitleOnPlaywrightDev() {
-        page.navigate("https://playwright.dev/");
+    public void testTitleOnDemoQA() {
+        page.navigate("https://demoqa.com/");
         String title = page.title();
-        assertEquals("Fast and reliable end-to-end testing for modern web apps | Playwright", title);
+        assertEquals("demosite", title);
     }
 
     @AfterEach
