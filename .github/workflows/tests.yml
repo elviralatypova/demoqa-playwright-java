@@ -1,0 +1,40 @@
+# GitHub Actions to run tests
+name: Java Tests
+
+on: [push] # Trigger on any push to the repository
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest # Use the latest Ubuntu
+
+    steps:
+      - uses: actions/checkout@v4 # Clone the repository
+
+      # Install Java 25
+      - name: Set up Java 25
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin # Eclipse Temurin distribution
+          java-version: "25" # Specific JDK version
+
+      # Cache Maven dependencies
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository # Path to the local Maven repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('***/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven- # Cache restore strategy
+
+      # Install system dependencies for headless mode
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgbm-dev x11-xkb-utils
+
+      # Run tests with a virtual display
+      - name: Run tests
+        run: |
+          export DISPLAY=:0 # Configure display environment variable
+          Xvfb :0 -screen 0 1280x720x24 >/dev/null 2>&1 & # Start Xvfb in background
+          mvn clean test # Run all tests
