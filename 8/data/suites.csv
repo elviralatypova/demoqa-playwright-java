@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2872","shouldSuccessfullySubmitRegistrationForm()","","Mon Mar 16 00:40:09 UTC 2026","passed","Mon Mar 16 00:40:12 UTC 2026","","com.elviraqa.RegistrationFormTest","com.elviraqa.RegistrationFormTest","shouldSuccessfullySubmitRegistrationForm"
+"","1788","testTitleOnDemoQA()","","Mon Mar 16 00:40:12 UTC 2026","passed","Mon Mar 16 00:40:14 UTC 2026","","com.elviraqa.PlaywrightTitleTest","com.elviraqa.PlaywrightTitleTest","testTitleOnDemoQA"
+"","4476","shouldSuccessfullyLoginWithCorrectUsernameAndPassword()","","Mon Mar 16 00:40:04 UTC 2026","passed","Mon Mar 16 00:40:09 UTC 2026","","com.elviraqa.LoginTest","com.elviraqa.LoginTest","shouldSuccessfullyLoginWithCorrectUsernameAndPassword"
+"","1384","shouldSuccessfullyEmulateIPhone12Pro()","","Mon Mar 16 00:40:15 UTC 2026","passed","Mon Mar 16 00:40:16 UTC 2026","","com.elviraqa.EmulationIPhone12ProTest","com.elviraqa.EmulationIPhone12ProTest","shouldSuccessfullyEmulateIPhone12Pro"
