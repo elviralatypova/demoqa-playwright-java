@@ -1,42 +1,11 @@
 package com.elviraqa;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class DialogHandlingTest {
-    private static Playwright playwright;
-
-    private static Browser browser;
-
-    private Page page;
-
-    @BeforeAll
-    static void beforeAll() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        browser.close();
-        playwright.close();
-    }
-
-    @BeforeEach
-    void setUp() {
-        page = browser.newPage();
-    }
-
-    @AfterEach
-    void tearDown() {
-        page.close();
-    }
-
+public class DialogHandlingTest extends AbstractPlaywrightTest {
     @Test
     void shouldSuccessfullyHandleAlerts() {
         // Navigate to the alerts test page

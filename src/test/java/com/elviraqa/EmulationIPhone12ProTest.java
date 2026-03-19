@@ -3,34 +3,19 @@ package com.elviraqa;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.ViewportSize;
 import com.microsoft.playwright.options.WaitUntilState;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class EmulationIPhone12ProTest {
-    private static Playwright playwright;
-
-    private static Browser browser;
-
+public class EmulationIPhone12ProTest extends AbstractPlaywrightTest {
     private BrowserContext mobileContext;
 
     private Page mobilePage;
-
-    @BeforeAll
-    static void beforeAll() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        browser.close();
-        playwright.close();
-    }
 
     @BeforeEach
     void setUp() {

@@ -6,39 +6,7 @@ import org.junit.jupiter.api.*;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-public class LoginTest {
-    private static Playwright playwright;
-
-    private static Browser browser;
-
-    private BrowserContext context;
-
-    private Page page;
-
-    @BeforeAll
-    static void beforeAll() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch();
-    }
-
-    @AfterAll
-    static void afterAll() {
-        browser.close();
-        playwright.close();
-    }
-
-    @BeforeEach
-    void setUp() {
-        context = browser.newContext();
-        page = browser.newPage();
-    }
-
-    @AfterEach
-    void tearDown() {
-        page.close();
-        context.close();
-    }
-
+public class LoginTest extends AbstractPlaywrightTest {
     @Test
     void shouldSuccessfullyLoginWithCorrectUsernameAndPassword() {
         // Navigate to the login page with a custom page load strategy
