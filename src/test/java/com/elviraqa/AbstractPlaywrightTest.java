@@ -11,7 +11,7 @@ public abstract class AbstractPlaywrightTest {
 
     protected static Browser browser;
 
-    private BrowserContext context;
+    protected BrowserContext context;
 
     protected Page page;
 
