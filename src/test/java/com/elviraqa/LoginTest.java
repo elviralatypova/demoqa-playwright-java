@@ -14,14 +14,14 @@ public class LoginTest extends AbstractPlaywrightTest {
                 .setWaitUntil(WaitUntilState.DOMCONTENTLOADED)); // Wait until DOM is loaded
 
         // Enter username and password
-        page.fill("#userName", "testuser");
-        page.fill("#password", "Test123!");
+        page.fill("#userName", "cosmos_luna");
+        page.fill("#password", "Test*cosmos5luna$");
 
         // Click the login button
         page.click("#login");
 
         // Verify that the correct user is logged in
         Locator userNameLabel = page.locator("#userName-value");
-        assertThat(userNameLabel).containsText("testuser");
+        assertThat(userNameLabel).containsText("cosmos_luna");
     }
 }
