@@ -16,4 +16,8 @@ public class HomePage {
     public void openFormsSection() {
         page.locator("div.card:has-text('Forms')").click();
     }
+
+    public void openBookStoreAppSection() {
+        page.locator("div.card:has-text('Book Store Application')").click();
+    }
 }
